@@ -1,1 +1,31 @@
+aruco_detector:
+  ros__parameters:
+    # Camera parameters (adjust based on your camera)
+    camera_frame: "camera_link"
+    marker_length: 0.1  # 10cm markers
+    dictionary: "DICT_4X4_50"
+    
+    # Detection parameters
+    detection_topic: "/aruco_detections"
+    image_topic: "/camera/image_raw"
+    camera_info_topic: "/camera/camera_info"
+    
+    # Filtering parameters
+    max_detection_distance: 5.0  # meters
+    min_detection_confidence: 0.6
 
+docking_controller:
+  ros__parameters:
+    # Target marker ID
+    target_marker_id: 0
+    
+    # Control parameters
+    linear_kp: 0.5
+    angular_kp: 1.0
+    max_linear_speed: 0.5
+    max_angular_speed: 1.0
+    
+    # Docking parameters
+    docking_distance: 0.1  # 10cm
+    alignment_threshold: 0.05  # radians
+    linear_threshold: 0.02  # meters
