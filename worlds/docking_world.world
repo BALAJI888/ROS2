@@ -1,1 +1,95 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="docking_world">
+    
+    <!-- Global lighting -->
+    <include>
+      <uri>model://sun</uri>
+    </include>
 
+    <!-- Ground plane -->
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+    <!-- ArUco markers as simple boxes with visual patterns -->
+    <model name="aruco_marker_0">
+      <pose>2 0 0.05 0 0 0</pose>
+      <static>true</static>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.1 0.1 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Black</name>
+            </script>
+          </material>
+        </visual>
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.1 0.1 0.01</size>
+            </box>
+          </geometry>
+        </collision>
+      </link>
+    </model>
+
+    <model name="aruco_marker_1">
+      <pose>1.5 1.0 0.05 0 0 1.57</pose>
+      <static>true</static>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.1 0.1 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Red</name>
+            </script>
+          </material>
+        </visual>
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.1 0.1 0.01</size>
+            </box>
+          </geometry>
+        </collision>
+      </link>
+    </model>
+
+    <model name="aruco_marker_2">
+      <pose>1.0 -1.0 0.05 0 0 -1.57</pose>
+      <static>true</static>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.1 0.1 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Green</name>
+            </script>
+          </material>
+        </visual>
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.1 0.1 0.01</size>
+            </box>
+          </geometry>
+        </collision>
+      </link>
+    </model>
+
+  </world>
+</sdf>
